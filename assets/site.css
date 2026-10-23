@@ -185,3 +185,11 @@ footer a:hover{color:var(--gold)}
 .faq details p{margin-top:.7rem}
 .contact-big{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);color:var(--teal);line-height:1.5}
 .contact-big a{text-decoration:none;border-bottom:2px solid var(--gold)}
+
+/* ---------- motion enhancement (set by assets/motion.js; absent = fully static) ---------- */
+.motion .r{opacity:0;transform:translateY(16px);transition:opacity .65s cubic-bezier(.2,.6,.2,1),transform .65s cubic-bezier(.2,.6,.2,1)}
+.motion .r.in{opacity:1;transform:none}
+.motion .hero .letter{transition:transform .4s cubic-bezier(.2,.6,.2,1);will-change:transform}
+.motion .btn{transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .15s,background .15s,color .15s}
+@media (prefers-reduced-motion:reduce){.motion .r{opacity:1;transform:none}}
+.mt1{margin-top:1rem}.mt2{margin-top:2rem}.mt25{margin-top:2.5rem}
