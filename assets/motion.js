@@ -87,9 +87,9 @@
         raf = 0;
         for (var i = 0; i < frags.length; i++) {
           var d = frags[i]._d;
-          frags[i].style.transform = 'translate3d(' + (mx * d).toFixed(1) + 'px,' + (my * d + sy * d / 60).toFixed(1) + 'px,0) rotate(' + (mx * d * 0.35).toFixed(1) + 'deg)';
+          frags[i].style.transform = 'translate3d(' + (mx * d).toFixed(1) + 'px,' + (my * d + sy * d / 600).toFixed(1) + 'px,0) rotate(' + (mx * d * 0.35).toFixed(1) + 'deg)';
         }
-        if (media) { media.style.transform = 'scale(1.08) translate3d(' + (-mx * 10).toFixed(1) + 'px,' + (-my * 8 - sy * 0.06).toFixed(1) + 'px,0)'; }
+        if (media) { media.style.transform = 'scale(1.1) translate3d(' + (-mx * 1.5).toFixed(2) + '%,' + (-my * 1 - sy / (window.innerHeight * 0.6) * 3).toFixed(2) + '%,0)'; }
       };
       var queue = function () { if (!raf) { raf = requestAnimationFrame(paint); } };
       if (fine) {
@@ -103,13 +103,27 @@
       }
       window.addEventListener('scroll', function () {
         var r = fr.getBoundingClientRect();
-        sy = (r.top + r.height / 2) - window.innerHeight / 2;
+        var lim = window.innerHeight * 0.6;
+        sy = Math.max(-lim, Math.min(lim, (r.top + r.height / 2) - window.innerHeight / 2));
         queue();
       }, { passive: true });
       queue();
     });
 
-    /* 5 · Buttons lean gently toward the cursor */
+    /* 5 · People loops: fetch + play only when near the viewport; pause when away */
+    var vids = document.querySelectorAll('.pf-media video');
+    if (vids.length) {
+      var vio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
+          else { v.pause(); }
+        });
+      }, { rootMargin: '200px 0px', threshold: 0.01 });
+      vids.forEach(function (v) { vio.observe(v); });
+    }
+
+    /* 6 · Buttons lean gently toward the cursor */
     if (fine) {
       document.querySelectorAll('.btn').forEach(function (btn) {
         btn.addEventListener('mousemove', function (e) {

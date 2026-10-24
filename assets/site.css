@@ -238,14 +238,15 @@ footer a:hover{color:var(--gold)}
 
 /* ---------- people frames (Lusion-style: media card + floating brand shards) ---------- */
 .pframe{position:relative;margin:0}
-.pf-media{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:3/2;background:var(--ink);box-shadow:0 30px 60px -30px rgba(9,55,65,.45)}
-.pf-media img,.pf-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.pf-media{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:16/9;background:var(--ink);box-shadow:0 30px 60px -30px rgba(9,55,65,.45)}
+.pf-media img,.pf-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
 .frag{position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(0 12px 18px rgba(9,55,65,.28))}
 .pframe figcaption{margin-top:1.1rem}
 .pf-tags{display:block;font-size:.78rem;letter-spacing:.14em;color:var(--sage);font-weight:600}
 .pf-title{display:block;font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--ink);line-height:1.15;margin-top:.35rem}
 .pf-title::before{content:"\2192";color:var(--gold-deep);margin-right:.6em}
 .people{max-width:1180px;margin:0 auto;padding:clamp(1rem,3vw,2rem) var(--pad)}
+.people-2 .pf-media{aspect-ratio:4/3}
 .people-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);margin-top:2.4rem}
 @media(max-width:760px){.people-2{grid-template-columns:1fr}.frag.hide-s{display:none}}
 .f-tl{top:-26px;left:-22px;width:64px}.f-tr{top:-34px;right:6%;width:92px}
