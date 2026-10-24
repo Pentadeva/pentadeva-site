@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" fill="none">
+<rect x="2" y="2" width="756" height="476" rx="14" fill="#F8F4EC" stroke="#E4DCC9" stroke-width="2"/>
+<g stroke="#7FA8A4" stroke-width="1.5" opacity=".35">
+<path d="M540 60 q30 -16 60 0"/><path d="M620 90 q30 -16 60 0"/><path d="M560 130 q30 -16 60 0"/>
+<path d="M120 52 q26 -14 52 0"/><path d="M460 50 q26 -14 52 0"/>
+</g>
+<path d="M96 140 q-14 70 8 136 q10 34 48 28 q30 -6 34 -40 l6 -112 q2 -34 -30 -36 q-50 -4 -66 24 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M214 120 q-16 90 6 160 q10 30 50 26 l70 -8 q30 -4 28 -36 l-8 -104 q-2 -36 -38 -40 q-66 -10 -108 2 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M238 312 q-6 44 16 62 q18 14 52 10 l66 -10 q26 -6 20 -34 l-6 -30 q-62 16 -148 2 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M416 112 q-18 110 4 210 q8 34 46 30 l76 -10 q32 -6 28 -40 l-16 -156 q-4 -38 -42 -40 q-60 -6 -96 6 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M230 36 q-12 34 4 58 q12 18 44 14 l96 -12 q28 -4 22 -30 q-4 -22 -28 -26 q-80 -14 -138 -4 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M600 128 q-12 70 6 128 q10 28 42 24 q34 -6 36 -38 l4 -84 q2 -32 -30 -36 q-38 -6 -58 6 Z" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2.5"/>
+<path d="M0 436 q120 -24 220 -16 q90 8 150 -14 q100 -34 210 -18 q90 12 180 -6" stroke="#7FA8A4" stroke-width="22" fill="none" stroke-linecap="round" opacity=".85"/>
+<text x="600" y="464" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#0E4F5C">River Thames</text>
+<path d="M84 128 q-18 96 14 172 q14 34 54 34 l72 -4 q-4 42 36 52 l80 6 q34 2 42 -30 l4 -22 q10 22 40 20 l66 -8 q40 -6 38 -48 l2 -80 q22 -28 6 -62 q-14 -28 -52 -26 l-64 2 q-10 -26 -44 -30 q-96 -14 -170 0 q-34 -22 -84 -14 q-66 10 -90 38 Z" fill="none" stroke="#C8A24B" stroke-width="3" stroke-dasharray="10 8" opacity=".9"/>
+<text x="118" y="130" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">WALTHAM FOREST</text>
+<text x="268" y="150" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">REDBRIDGE</text>
+<text x="262" y="336" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">BARKING</text>
+<text x="470" y="146" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">HAVERING</text>
+<text x="258" y="60" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">EPPING FRINGE</text>
+<text x="606" y="156" font-family="Georgia, serif" font-size="14" fill="#7FA8A4">BRENTWOOD</text>
+<g transform="translate(160 236)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="174" y="241" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="start">Walthamstow</text>
+<g transform="translate(304 268)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><circle cx="304" cy="242" r="19" fill="none" stroke="#A8842F" stroke-width="2" stroke-dasharray="4 4"/><text x="318" y="273" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="start">Ilford — HQ</text>
+<g transform="translate(330 392)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="344" y="397" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="start">Barking &amp; Dagenham</text>
+<g transform="translate(352 106)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="366" y="111" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="start">Chigwell</text>
+<g transform="translate(292 92)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="278" y="97" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="end">Loughton</text>
+<g transform="translate(500 240)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="514" y="245" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="start">Romford</text>
+<g transform="translate(668 222)">
+<path d="M0 0 C -10 -14 -13 -20 -13 -27 a13 13 0 1 1 26 0 c0 7 -3 13 -13 27 Z" fill="#C8A24B" stroke="#A8842F" stroke-width="1.5"/>
+<circle cx="0" cy="-26" r="5" fill="#FFFDF8"/></g><text x="654" y="227" font-family="Georgia, serif" font-size="17" fill="#093741" text-anchor="end">Brentwood</text>
+<g transform="translate(712 52)"><circle r="18" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2"/><path d="M0 -12 l5 14 l-5 -4 l-5 4 Z" fill="#A8842F"/><text x="0" y="14" font-family="Georgia, serif" font-size="12" fill="#093741" text-anchor="middle">N</text></g>
+<g transform="translate(52 366)">
+<rect x="-16" y="-22" width="206" height="66" rx="8" fill="#FFFDF8" stroke="#E4DCC9" stroke-width="2"/>
+<path d="M0 6 C -6 -3 -8 -7 -8 -11 a8 8 0 1 1 16 0 c0 4 -2 8 -8 17 Z" fill="#C8A24B"/>
+<text x="16" y="2" font-family="Georgia, serif" font-size="14" fill="#093741">We come to you</text>
+<line x1="-8" y1="26" x2="8" y2="26" stroke="#C8A24B" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="16" y="31" font-family="Georgia, serif" font-size="14" fill="#093741">The founding patch</text>
+</g>
+</svg>

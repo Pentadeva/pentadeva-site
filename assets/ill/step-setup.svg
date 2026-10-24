@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" fill="none">
+<ellipse cx="130" cy="188" rx="96" ry="9" fill="#093741" opacity=".08"/>
+<line x1="34" y1="112" x2="226" y2="112" stroke="#093741" stroke-width="4" stroke-linecap="round"/>
+<rect x="48" y="40" width="22" height="70" rx="3" fill="#0E4F5C"/>
+<rect x="76" y="40" width="22" height="70" rx="3" fill="#7FA8A4"/>
+<rect x="104" y="40" width="22" height="70" rx="3" fill="#C8A24B"/>
+<rect x="132" y="40" width="22" height="70" rx="3" fill="#0E4F5C"/>
+<g transform="rotate(10 178 78)"><rect x="166" y="48" width="22" height="64" rx="3" fill="#FFFDF8" stroke="#093741" stroke-width="3"/></g>
+<rect x="52" y="52" width="14" height="6" rx="3" fill="#F8F4EC" opacity=".8"/><rect x="80" y="52" width="14" height="6" rx="3" fill="#F8F4EC" opacity=".8"/><rect x="108" y="52" width="14" height="6" rx="3" fill="#F8F4EC" opacity=".8"/><rect x="136" y="52" width="14" height="6" rx="3" fill="#F8F4EC" opacity=".8"/>
+<path d="M64 188 v-36 l12 -10 h72 l12 10 v36 Z" fill="#7FA8A4" opacity=".35"/>
+<path d="M64 152 l12 -10 h72 l12 10" stroke="#093741" stroke-width="3" fill="none"/>
+<rect x="64" y="152" width="96" height="36" rx="3" fill="none" stroke="#093741" stroke-width="3"/>
+<g transform="rotate(-12 196 158)"><rect x="182" y="132" width="34" height="46" rx="3" fill="#FFFDF8" stroke="#093741" stroke-width="3"/><rect x="189" y="142" width="20" height="5" rx="2.5" fill="#E4DCC9"/><rect x="189" y="153" width="14" height="5" rx="2.5" fill="#E4DCC9"/></g>
+</svg>

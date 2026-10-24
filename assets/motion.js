@@ -21,8 +21,8 @@
 
     var sel = ['main section h2', 'main .lede', '.page-head h1', '.page-head .sub',
       '.outcome', '.step', '.rung', '.offer .scarce', '.offer .small',
-      '.founder-card', '.founder > div', '.boroughs',
-      '.svc > p', '.svc ul', '.faq details', '.contact-big'].join(',');
+      '.founder-card', '.founder > div', '.boroughs', '.map-wrap',
+      '.svc > p', '.svc ul', '.svc-row', '.faq details', '.contact-big'].join(',');
     document.querySelectorAll(sel).forEach(function (el) {
       var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
       el.style.transitionDelay = ((idx > 0 ? idx % 4 : 0) * 80) + 'ms';
@@ -30,29 +30,51 @@
       io.observe(el);
     });
 
-    /* 2 · The letter sits in the hand: a faint tilt toward the cursor */
-    var letter = document.querySelector('.hero .letter');
-    if (letter && fine) {
-      var raf = 0, rx = 0, ry = 0;
-      var apply = function () {
-        raf = 0;
-        letter.style.transform = (rx || ry)
-          ? 'perspective(1400px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)'
-          : '';
-      };
-      letter.parentNode.addEventListener('mousemove', function (e) {
-        var r = letter.getBoundingClientRect();
-        ry = ((e.clientX - r.left) / r.width - 0.5) * 1.5;
-        rx = ((e.clientY - r.top) / r.height - 0.5) * -1.1;
-        if (!raf) { raf = requestAnimationFrame(apply); }
-      });
-      letter.parentNode.addEventListener('mouseleave', function () {
-        rx = 0; ry = 0;
-        if (!raf) { raf = requestAnimationFrame(apply); }
+    /* 2 · Depth: things tilt faintly toward the cursor (fine pointers only) */
+    if (fine) {
+      document.querySelectorAll('[data-tilt]').forEach(function (el) {
+        var max = parseFloat(el.getAttribute('data-tilt')) || 1.5;
+        var raf = 0, rx = 0, ry = 0;
+        var apply = function () {
+          raf = 0;
+          el.style.transform = (rx || ry)
+            ? 'perspective(1400px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)'
+            : '';
+        };
+        el.addEventListener('mousemove', function (e) {
+          var r = el.getBoundingClientRect();
+          ry = ((e.clientX - r.left) / r.width - 0.5) * max;
+          rx = ((e.clientY - r.top) / r.height - 0.5) * -max * 0.75;
+          if (!raf) { raf = requestAnimationFrame(apply); }
+        });
+        el.addEventListener('mouseleave', function () {
+          rx = 0; ry = 0;
+          if (!raf) { raf = requestAnimationFrame(apply); }
+        });
       });
     }
 
-    /* 3 · Buttons lean gently toward the cursor */
+    /* 3 · Depth: layers drift at different speeds on scroll */
+    var paras = Array.prototype.slice.call(document.querySelectorAll('[data-para]'));
+    if (paras.length) {
+      paras.forEach(function (el) { el._f = parseFloat(el.getAttribute('data-para')) || 0.08; });
+      var ticking = 0;
+      var drift = function () {
+        ticking = 0;
+        var mid = window.innerHeight / 2;
+        for (var i = 0; i < paras.length; i++) {
+          var el = paras[i], r = el.getBoundingClientRect();
+          var off = ((r.top + r.bottom) / 2 - mid) * -el._f;
+          el.style.transform = 'translateY(' + off.toFixed(1) + 'px)';
+        }
+      };
+      var onScroll = function () { if (!ticking) { ticking = requestAnimationFrame(drift); } };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      drift();
+    }
+
+    /* 4 · Buttons lean gently toward the cursor */
     if (fine) {
       document.querySelectorAll('.btn').forEach(function (btn) {
         btn.addEventListener('mousemove', function (e) {
