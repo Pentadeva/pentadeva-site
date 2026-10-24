@@ -15,6 +15,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/motion.js" defer></script>
+<script src="/assets/calc.js" defer></script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <script type="application/ld+json">
 {
@@ -127,6 +128,28 @@
           <p>Training chased, audits filed, evidence inspection-ready. You see everything; you chase nothing.</p>
         </div>
         <img class="sart" src="/assets/ill/step-rhythm.svg" alt="" width="260" height="200">
+      </div>
+    </div>
+  </section>
+
+  <!-- What it costs you now -->
+  <section class="calc" aria-labelledby="calc-h">
+    <h2 id="calc-h">What your back office is really costing you</h2>
+    <p class="lede">Move the sliders to your own numbers. Nothing is sent anywhere &mdash; the sums happen on this page.</p>
+    <div class="calc-grid">
+      <div class="calc-in">
+        <label for="c-hours">Hours a week on rotas, training records, audits, inspection evidence and admin email<output id="o-hours">12 hours</output></label>
+        <input type="range" id="c-hours" min="4" max="30" step="1" value="12">
+        <label for="c-rate">What an hour of that time costs<output id="o-rate">£25</output></label>
+        <input type="range" id="c-rate" min="15" max="60" step="1" value="25">
+        <p class="calc-note">The starting numbers are deliberately cautious. Managers themselves put the time lost to bureaucracy at up to 20 hours a week (<a href="https://www.laingbuissonnews.com/care-markets-content/news/time-being-wasted-on-bureaucracy-say-care-home-managers/" rel="noopener">survey of 222 managers, 2023</a>). &pound;25 an hour is a registered manager on about &pound;40,000 once employer costs are added. If it&rsquo;s your own time, it&rsquo;s worth more.</p>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="calc-big"><span id="r-month">£1,300</span><small>a month &mdash; the cost of that time, or <span id="r-hours">52 hours</span> of someone&rsquo;s month</small></div>
+        <div class="calc-row"><span>Pentadeva standard rate</span><b>£749</b></div>
+        <div class="calc-row"><span>You keep, every month</span><b id="r-keep">£551</b></div>
+        <div class="calc-row gold"><span>At the founding rate of £449, you keep</span><b id="r-keepf">£851</b></div>
+        <p class="calc-verdict" id="r-verdict">At the standard rate, Pentadeva costs less than the time it gives back.</p>
       </div>
     </div>
   </section>

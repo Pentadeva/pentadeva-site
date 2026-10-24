@@ -21,7 +21,7 @@
 
     var sel = ['main section h2', 'main .lede', '.page-head h1', '.page-head .sub',
       '.outcome', '.step', '.rung', '.offer .scarce', '.offer .small',
-      '.founder-card', '.founder > div', '.boroughs', '.map-wrap',
+      '.founder-card', '.founder > div', '.boroughs', '.map-wrap', '.calc-in', '.calc-out',
       '.svc > p', '.svc ul', '.svc-row', '.faq details', '.contact-big'].join(',');
     document.querySelectorAll(sel).forEach(function (el) {
       var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
