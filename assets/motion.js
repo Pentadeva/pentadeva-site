@@ -4,7 +4,10 @@
 (function () {
   'use strict';
   try {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+      return;
+    }
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('motion');
     var fine = window.matchMedia('(pointer: fine)').matches;
@@ -22,7 +25,7 @@
     var sel = ['main section h2', 'main .lede', '.page-head h1', '.page-head .sub',
       '.outcome', '.step', '.rung', '.offer .scarce', '.offer .small',
       '.founder-card', '.founder > div', '.boroughs', '.map-wrap', '.calc-in', '.calc-out',
-      '.svc > p', '.svc ul', '.svc-row', '.faq details', '.contact-big'].join(',');
+      '.svc > p', '.svc ul', '.svc-row', '.pframe', '.faq details', '.contact-big'].join(',');
     document.querySelectorAll(sel).forEach(function (el) {
       var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
       el.style.transitionDelay = ((idx > 0 ? idx % 4 : 0) * 80) + 'ms';
@@ -74,7 +77,39 @@
       drift();
     }
 
-    /* 4 · Buttons lean gently toward the cursor */
+    /* 4 · People frames: shards float at their own depth (cursor + scroll); media counter-shifts */
+    document.querySelectorAll('.pframe').forEach(function (fr) {
+      var frags = Array.prototype.slice.call(fr.querySelectorAll('.frag'));
+      var media = fr.querySelector('.pf-media img, .pf-media video');
+      var mx = 0, my = 0, sy = 0, raf = 0;
+      frags.forEach(function (f) { f._d = parseFloat(f.getAttribute('data-depth')) || 20; });
+      var paint = function () {
+        raf = 0;
+        for (var i = 0; i < frags.length; i++) {
+          var d = frags[i]._d;
+          frags[i].style.transform = 'translate3d(' + (mx * d).toFixed(1) + 'px,' + (my * d + sy * d / 60).toFixed(1) + 'px,0) rotate(' + (mx * d * 0.35).toFixed(1) + 'deg)';
+        }
+        if (media) { media.style.transform = 'scale(1.08) translate3d(' + (-mx * 10).toFixed(1) + 'px,' + (-my * 8 - sy * 0.06).toFixed(1) + 'px,0)'; }
+      };
+      var queue = function () { if (!raf) { raf = requestAnimationFrame(paint); } };
+      if (fine) {
+        fr.addEventListener('mousemove', function (e) {
+          var r = fr.getBoundingClientRect();
+          mx = (e.clientX - r.left) / r.width - 0.5;
+          my = (e.clientY - r.top) / r.height - 0.5;
+          queue();
+        });
+        fr.addEventListener('mouseleave', function () { mx = 0; my = 0; queue(); });
+      }
+      window.addEventListener('scroll', function () {
+        var r = fr.getBoundingClientRect();
+        sy = (r.top + r.height / 2) - window.innerHeight / 2;
+        queue();
+      }, { passive: true });
+      queue();
+    });
+
+    /* 5 · Buttons lean gently toward the cursor */
     if (fine) {
       document.querySelectorAll('.btn').forEach(function (btn) {
         btn.addEventListener('mousemove', function (e) {
