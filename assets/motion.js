@@ -120,7 +120,15 @@
           else { v.pause(); }
         });
       }, { rootMargin: '200px 0px', threshold: 0.01 });
-      vids.forEach(function (v) { vio.observe(v); });
+      vids.forEach(function (v) {
+        /* intro + loop: play the opening action once, then loop only the settled tail */
+        var ls = parseFloat(v.getAttribute('data-loop-start'));
+        if (ls > 0) {
+          v.loop = false;
+          v.addEventListener('ended', function () { v.currentTime = ls; var p = v.play(); if (p && p.catch) { p.catch(function () {}); } });
+        }
+        vio.observe(v);
+      });
     }
 
     /* 6 · Buttons lean gently toward the cursor */
